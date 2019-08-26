@@ -3,6 +3,7 @@ package com.team.house.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.team.house.entity.Street;
+import com.team.house.entity.StreetExample;
 import com.team.house.mapper.StreetMapper;
 import com.team.house.service.StreetService;
 import com.team.house.util.PageBean;
@@ -53,5 +54,13 @@ public class StreetServiceImpl implements StreetService {
     @Override
     public Integer delMoreStreet(Integer[] ids) {
         return streetMapper.delMoreStreet(ids);
+    }
+
+    @Override
+    public List<Street> getStreetByDistrictId(Integer id) {
+        StreetExample e = new StreetExample();
+        StreetExample.Criteria c = e.createCriteria();
+        c.andDistrictIdEqualTo(id);
+        return streetMapper.selectByExample(e);
     }
 }
