@@ -22,6 +22,7 @@ import java.util.List;
  * @Date 2019/8/9 11:15
  * @Created by Administrator
  */
+
 @Service
 public class DistrictServiceImpl implements DistrictService {
 
@@ -30,13 +31,13 @@ public class DistrictServiceImpl implements DistrictService {
     @Autowired
     private StreetMapper streetMapper;
 
-    @Override
+   /* @Override
     public List<District> getAllDistrict() {
         //封装条件实体类
         DistrictExample districtExample = new DistrictExample();
         List<District> list = districtMapper.selectByExample(districtExample);
         return list;
-    }
+    }*/
 
     @Override
     public PageInfo<District> pageShow(Integer page, Integer rows) {

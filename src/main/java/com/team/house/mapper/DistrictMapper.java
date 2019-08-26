@@ -2,6 +2,7 @@ package com.team.house.mapper;
 
 import com.team.house.entity.District;
 import com.team.house.entity.DistrictExample;
+
 import java.util.List;
 
 public interface DistrictMapper {
@@ -19,5 +20,5 @@ public interface DistrictMapper {
 
     int updateByPrimaryKey(District record);
 
-    public int delMoreDistrict(Integer [] ids);
+    int delMoreDistrict(Integer[] ids);
 }

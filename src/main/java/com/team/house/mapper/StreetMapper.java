@@ -19,8 +19,9 @@ public interface StreetMapper {
 
     int updateByPrimaryKey(Street record);
 
-    //通过区域编号删除街道
+    //事务管理 通过区域编号删除街道
     int deleteStreetByDistrictId(Integer id);
 
+    //批量删除
     int delMoreStreet(Integer[] id);
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -20,12 +19,12 @@ public class DistrictController {
     private DistrictService districtService;
 
     //查询全部信息
-    @RequestMapping("/getDistrict")
+   /* @RequestMapping("/getDistrict")
     @ResponseBody
     public List<District> getDistrict() {
         List<District> list = districtService.getAllDistrict();
         return list;
-    }
+    }*/
 
     //分页查询所有 pageHelper插件 加 easyui框架
     @RequestMapping("/pageShow")
@@ -96,11 +95,9 @@ public class DistrictController {
         String arys[] = ids.split(",");
         Integer[] is = new Integer[arys.length];
         for (int i = 0; i < arys.length; i++) {
-            is[i] = new Integer(arys[i]);
+            is[i]=new Integer(arys[i]);
         }
         //调用业务
-        System.out.println(is.toString());
-        System.out.println(arys.toString());
         int temp = districtService.delMoreDistrict(is);
         return "{\"result\":" + temp + "}";
     }

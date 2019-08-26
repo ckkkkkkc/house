@@ -7,9 +7,8 @@ import com.team.house.util.PageBean;
 import java.util.List;
 
 /**
- * Created by Administrator on 2019-8-13.
+ * 房屋类型模块
  */
-
 public interface TypeService {
 
     //分页查询所有

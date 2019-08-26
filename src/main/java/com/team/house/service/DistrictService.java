@@ -3,16 +3,16 @@ package com.team.house.service;
 import com.github.pagehelper.PageInfo;
 import com.team.house.entity.District;
 
-import java.util.List;
-
+/**
+ * 区域模块
+ */
 public interface DistrictService {
 
     /**
      * 查询所有区域
-     *
      * @return 区域实体集合
      */
-    List<District> getAllDistrict();
+  //  List<District> getAllDistrict();
 
     //分页查询所有
     PageInfo<District> pageShow(Integer page, Integer rows);

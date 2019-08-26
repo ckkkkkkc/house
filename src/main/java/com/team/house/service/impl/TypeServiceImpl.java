@@ -48,9 +48,11 @@ public class TypeServiceImpl implements TypeService {
         return typeMapper.updateByPrimaryKeySelective(type);
     }
 
-    //删除区域 有关街道
+    //删除房屋类型
     @Override
     public Integer deleteOneType(Integer id) {
+        //判断该类型下有没有房屋 有则删除失败
+        //select count(1) from house where type=id;
      return  typeMapper.deleteByPrimaryKey(id);
 
     }

@@ -113,12 +113,13 @@
     where ID = #{id,jdbcType=INTEGER}
   </update>
 
-  <!--删除区域下的街道-->
+  <!--通过区域删除街道-->
+  <!-- deleteStreetByDistrictId(Integer id)-->
   <delete id="deleteStreetByDistrictId" parameterType="int">
-    DELETE FROM street WHERE district_id=#{id}
+    DELETE FROM street WHERE DISTRICT_ID=#{id}
   </delete>
 
-  <!--批量删除区域 [1,2,3]-->
+  <!--批量删除街道 [1,2,3]-->
   <delete id="delMoreStreet">
     <!--使用foreach构建in关键字
     如果传递是数组:  collection="array"

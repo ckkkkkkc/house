@@ -27,7 +27,7 @@ public class TypeController {
     @ResponseBody
     public Map<String, Object> getType(PageBean page) {
         PageInfo<Type> info = typeService.pageShow(page);
-        System.out.println(page);
+        //System.out.println(page);
         HashMap<String, Object> map = new HashMap<>();
         map.put("rows", info.getList());
         map.put("total", info.getTotal());
@@ -85,7 +85,7 @@ public class TypeController {
         return "{\"result\":" + temp + "}";
     }
 
-    //批量删除区域
+    //批量删除
     //delMoreType?id=1&id=2&id=3  = public String delType(Integer []id)
     @RequestMapping("/delMoreType")  //1,2,3
     @ResponseBody
@@ -97,8 +97,6 @@ public class TypeController {
             is[i]=new Integer(arys[i]);
         }
         //调用业务
-        System.out.println(is.toString());
-        System.out.println(arys.toString());
         int temp=typeService.delMoreType(is);
         return "{\"result\":"+temp+"}";
     }

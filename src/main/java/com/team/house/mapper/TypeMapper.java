@@ -19,6 +19,8 @@ public interface TypeMapper {
 
     int updateByPrimaryKey(Type record);
 
+    //
+
     //批量删除
     int delMoreType(Integer [] ids);
 }

@@ -7,12 +7,15 @@ import com.team.house.mapper.StreetMapper;
 import com.team.house.service.StreetService;
 import com.team.house.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2019-8-13.
  */
+
+@Service
 public class StreetServiceImpl implements StreetService {
     @Autowired
     private StreetMapper streetMapper;
@@ -42,7 +45,6 @@ public class StreetServiceImpl implements StreetService {
         return streetMapper.updateByPrimaryKeySelective(Street);
     }
 
-    //删除区域 有关街道
     @Override
     public Integer deleteOneStreet(Integer id) {
         return streetMapper.deleteByPrimaryKey(id);
